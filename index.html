@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elise & [Votre prénom] - Mariage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #e3a6a1;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #e36f5f;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #e36f5f;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d45b4c;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Elise & [Votre prénom]</h1>
+    <p>Rejoignez-nous pour célébrer notre mariage le 30 août 2025 au Château Grange Cochard !</p>
+</header>
+
+<section id="programme">
+    <h2>Programme</h2>
+    <ul>
+        <li><strong>14h00</strong> : Cérémonie</li>
+        <li><strong>16h00</strong> : Cocktail</li>
+        <li><strong>19h30</strong> : Dîner</li>
+        <li><strong>22h30</strong> : Soirée dansante</li>
+    </ul>
+</section>
+
+<section id="lieu">
+    <h2>Lieu</h2>
+    <p>Château Grange Cochard, Beaujolais</p>
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0!2d0!3d0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2z0!5e0!3m2!1sfr!2sfr!4v1234567890"
+        allowfullscreen>
+    </iframe>
+</section>
+
+<section id="rsvp">
+    <h2>RSVP</h2>
+    <form id="rsvp-form">
+        <div class="form-group">
+            <label for="name">Nom et Prénom</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Adresse e-mail</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="attendance">Serez-vous présent(e) ?</label>
+            <select id="attendance" name="attendance" required>
+                <option value="">-- Choisir --</option>
+                <option value="yes">Oui</option>
+                <option value="no">Non</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="menu">Choisissez votre plat principal</label>
+            <select id="menu" name="menu" required>
+                <option value="">-- Choisir --</option>
+                <option value="canard">Magret de canard</option>
+                <option value="risotto">Risotto aux girolles</option>
+            </select>
+        </div>
+        <button type="submit">Envoyer</button>
+    </form>
+</section>
+
+<section id="infos-pratiques">
+    <h2>Informations pratiques</h2>
+    <ul>
+        <li>Hébergement : Plusieurs options disponibles à proximité.</li>
+        <li>Dress code : Tenue élégante, avec une touche de couleur pastel.</li>
+        <li>Parking : Gratuit sur place.</li>
+    </ul>
+</section>
+
+<section id="liste-cadeaux">
+    <h2>Liste de mariage</h2>
+    <p>Votre présence est notre plus beau cadeau, mais si vous souhaitez contribuer, voici notre liste de mariage : <a href="#">Accéder à la liste</a></p>
+</section>
+
+<script>
+    document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Merci pour votre réponse !');
+        // Logique pour envoyer les données à un serveur ou par email
+    });
+</script>
+
+</body>
+</html>
