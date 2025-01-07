@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présence & Repas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        form {
+            max-width: 500px;
+            margin: auto;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="programme.html">Programme</a></li>
+            <li><a href="lieu.html">Informations sur le lieu</a></li>
+            <li><a href="presence.html">Présence & Repas</a></li>
+            <li><a href="infos-pratiques.html">Informations pratiques</a></li>
+            <li><a href="liste-mariage.html">Liste de mariage</a></li>
+            <li><a href="contact.html">Nous contacter</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Présence & Repas</h1>
+    </header>
+    <main>
+        <h2>Confirmez votre présence et votre choix de repas</h2>
+      <form action="https://formspree.io/f/mdkkpjdb" method="post" onsubmit="redirectToThankYouPage(event)">
+            <label for="name">Nom et Prénom :</label>
+            <input type="text" id="name" name="name" placeholder="Exemple : Jean Dupont" required>
+            
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" placeholder="Exemple : jean.dupont@example.com" required>
+            
+            <label for="cocktail-dinner">Serez-vous présent pour le cocktail et dîner samedi soir ?</label>
+            <select id="cocktail-dinner" name="cocktail-dinner" required>
+                <option value="">-- Choisissez une option --</option>
+                <option value="oui">Oui</option>
+                <option value="non">Non</option>
+            </select>
+            
+            <label for="brunch">Serez-vous présent pour le brunch du dimanche midi ?</label>
+            <select id="brunch" name="brunch" required>
+                <option value="">-- Choisissez une option --</option>
+                <option value="oui">Oui</option>
+                <option value="non">Non</option>
+            </select>
+            
+            <label for="dish">Choix du plat principal :</label>
+            <select id="dish" name="dish">
+                <option value="">-- Sélectionnez un plat (si présent) --</option>
+                <option value="magret">Magret de canard</option>
+                <option value="risotto">Risotto aux girolles</option>
+            </select>
+
+            <!-- Champ caché pour redirection -->
+            <input type="hidden" name="_redirect" value="file:///C:/Users/amontegu/OneDrive%20-%20Ubisoft/Divers/Elise/Mariage/mariage-A-E/Wedding%20V3/merci.html">            
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </main>
+ <script>
+        function redirectToThankYouPage(event) {
+            event.preventDefault(); // Empêche le comportement par défaut (soumission classique)
+            
+            // Envoie des données à Formspree
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Redirection en cas de succès
+                    window.location.href = 'merci.html';
+                } else {
+                    // Gérer les erreurs (facultatif)
+                    alert("Une erreur est survenue, merci de réessayer.");
+                }
+            }).catch(error => {
+                console.error("Erreur:", error);
+                alert("Une erreur réseau est survenue.");
+            });
+        }
+    </script>
+</body>
+</html>
