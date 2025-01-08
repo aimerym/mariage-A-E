@@ -3,70 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notre Mariage</title>
+    <title>Accueil - Mariage Aimery & Elise</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Style général */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Menu de navigation */
+        nav {
+            background-color: #5d9464;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Bannière */
+        .banner {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+            opacity: 0.8;
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .banner-text h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .banner-text p {
+            font-size: 1.5em;
+            margin: 10px 0 0;
+        }
+
+        /* Section principale */
+        main {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #5d9464;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #4a7652;
+        }
+    </style>
 </head>
 <body>
-<nav id="navbar">
-    <div class="nav-container">
-        <span id="hamburger" onclick="toggleMenu()">☰</span>
-        <ul class="menu">
+    <nav>
+        <ul>
             <li><a href="index.html">Accueil</a></li>
             <li><a href="programme.html">Programme</a></li>
-            <li><a href="lieu.html">Informations sur le lieu</a></li>
+            <li><a href="lieu.html">Lieu & Hébergement</a></li>
             <li><a href="presence.html">Présence & Repas</a></li>
-            <li><a href="pratique.html">Informations pratiques</a></li>
-            <li><a href="liste.html">Liste de mariage</a></li>
-            <li><a href="contact.html">Nous contacter</a></li>    </ul>
-</nav>
+            <li><a href="liste-mariage.html">Liste de mariage</a></li>
+            <li><a href="contact.html">Nous contacter</a></li>
+        </ul>
     </nav>
-    <header>
-        <h1>Bienvenue à notre mariage !</h1>
-    </header>
-    <main>
-        <p>Nous sommes ravis de vous accueillir pour célébrer notre grand jour. Naviguez dans le menu pour découvrir toutes les informations.</p>
-    </main>
 
-<section id="countdown">
-    <h2>Jusqu'au grand jour :</h2>
-    <div id="timer">
-        <div class="countdown-box">
-            <span id="days">00</span>
-            <p>jours restants</p>
+    <div class="banner">
+        <img src="IMG-20241201-WA0011.jpg" alt="Château Grange Cochard">
+        <div class="banner-text">
+            <h1>Aimery & Elise</h1>
+            <p>30 Août 2025</p>
         </div>
     </div>
-</section>
 
-<script>
-    // Date de l'événement
-    const weddingDate = new Date("2025-08-30T00:00:00").getTime();
-
-    // Mise à jour du compte à rebours une fois par jour
-    const updateCountdown = () => {
-        const now = new Date().getTime();
-        const timeLeft = weddingDate - now;
-
-        // Calcul des jours restants
-        const days = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
-
-        // Affichage des jours restants
-        document.getElementById("days").textContent = days > 0 ? days : "0";
-
-        // Optionnel : afficher un message spécial une fois la date atteinte
-        if (timeLeft < 0) {
-            document.getElementById("timer").innerHTML = "<p>Félicitations ! C'est le grand jour !</p>";
-        }
-    };
-
-    // Initialisation du compte à rebours
-    updateCountdown();
-    // Met à jour une fois par jour
-    setInterval(updateCountdown, 24 * 60 * 60 * 1000);
-</script>
-
-<script src="script.js"></script>
-
-
+    <main>
+        <h2>Bienvenue sur notre site de mariage</h2>
+        <p>Nous avons hâte de célébrer cette journée spéciale avec vous au magnifique Château Grange Cochard.</p>
+        <a class="btn" href="programme.html">Découvrir le programme</a>
+    </main>
 </body>
-
 </html>
